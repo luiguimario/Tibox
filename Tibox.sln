@@ -5,6 +5,14 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Models", "Models\Tibox.Models.csproj", "{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Repository", "Repository\Tibox.Repository.csproj", "{697AA3D9-0DF2-4ACE-A957-B4A45865785B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Test", "Unit Test", "{0BC496E7-9444-4715-B1EA-38B799935D40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Repository.Test", "Tibox.Repository.Test\Tibox.Repository.Test.csproj", "{845A545C-F598-4358-A27B-38A585BC9789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.UnitOfWork", "Tibox.UnitOfWork\Tibox.UnitOfWork.csproj", "{26DCD70D-F3F1-432F-AB5C-641DC426BB04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +23,23 @@ Global
 		{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{697AA3D9-0DF2-4ACE-A957-B4A45865785B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697AA3D9-0DF2-4ACE-A957-B4A45865785B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697AA3D9-0DF2-4ACE-A957-B4A45865785B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697AA3D9-0DF2-4ACE-A957-B4A45865785B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845A545C-F598-4358-A27B-38A585BC9789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845A545C-F598-4358-A27B-38A585BC9789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845A545C-F598-4358-A27B-38A585BC9789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845A545C-F598-4358-A27B-38A585BC9789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26DCD70D-F3F1-432F-AB5C-641DC426BB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26DCD70D-F3F1-432F-AB5C-641DC426BB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26DCD70D-F3F1-432F-AB5C-641DC426BB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26DCD70D-F3F1-432F-AB5C-641DC426BB04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{845A545C-F598-4358-A27B-38A585BC9789} = {0BC496E7-9444-4715-B1EA-38B799935D40}
 	EndGlobalSection
 EndGlobal

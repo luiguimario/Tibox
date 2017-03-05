@@ -5,22 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Tibox.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tibox.UnitOfWork;
 
 namespace Tibox.Repository.Test
 {
     [TestClass]
     public class OrderRepositoryTest
     {
-        private readonly IRepository<Order> _repository;
+        //private readonly IRepository<Order> _repository;
+        private readonly IUnitOfWork _unitOfWork;
+
         public OrderRepositoryTest()
         {
-            _repository = new BaseRepository<Order>();
+            //_repository = new BaseRepository<Order>();
+            _unitOfWork = new TiboxUnitOfWork();
         }
 
         [TestMethod]
         public void Get_All_Orders()
         {
-            var result = _repository.GetAll();
+            //var result = _repository.GetAll();
+            var result = _unitOfWork.Orders.GetAll();
             Assert.AreEqual(result.Count() > 0, true);
         }
 
@@ -28,10 +33,11 @@ namespace Tibox.Repository.Test
         [TestMethod]
         public void Insert_Order()
         {
-            var customer = new Order
+            var order = new Order
             {
-                CustomerId = 1,
-                OrderDate = "13/02/2017";
+                OrderDate = "05/03/2017",
+                OrderNumber = 2,
+
                 
             };
 
@@ -63,6 +69,32 @@ namespace Tibox.Repository.Test
         }
 
     */
+
+
+        [TestMethod]
+        public void Get_Order_ByNumberOrder()
+        {
+            var order = _unitOfWork.Orders.SearchByOrderNumber(542384);
+            
+            Assert.AreEqual(order != null, true);
+
+            Assert.AreEqual(order.Id, 7);
+            Assert.AreEqual(order.CustomerId, 14);
+
+        }
+
+        [TestMethod]
+        public void Get_Customer_Whit_Orders()
+        {
+            var order = _unitOfWork.Orders.OrderWithOrderItems(7);
+
+            Assert.AreEqual(order != null, true);
+
+            Assert.AreEqual(order.OrderItems.Any(), true);
+
+
+        }
+
 
     }
 }
